@@ -1,12 +1,12 @@
 public class Produto {
     private String nome;
     private double preco;
-    private Data dataDeValidade;
+    private Data dataValidade;
 
-    public Produto (String nome, double preco, Data dataDeValidade) {
+    public Produto (String nome, double preco, Data dataValidade) {
         this.nome = nome;
         this.preco = preco;
-        this.dataDeValidade = dataDeValidade;
+        this.dataValidade = dataValidade;
     }
 
     public String getNome () {
@@ -17,8 +17,8 @@ public class Produto {
         return preco;
     }
 
-    public Data getDataDeValidade () {
-        return dataDeValidade;
+    public Data getDataValidade () {
+        return dataValidade;
     }
 
     public void setNome (String nome) {
@@ -29,8 +29,8 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setDataDeValidade (Data dataDeValidade) {
-        this.dataDeValidade = dataDeValidade;
+    public void setDataValidade (Data dataValidade) {
+        this.dataValidade = dataValidade;
     }
 
     public String toString () {
@@ -39,15 +39,15 @@ public class Produto {
     }
 
     public boolean estaVencido (Data data) {
-        if (dataDeValidade.getAno() < data.getAno()) {
+        if (dataValidade.getAno() < data.getAno()) {
             return true;
         }
-        else if (dataDeValidade.getAno() == data.getAno())
-            if (dataDeValidade.getMes() < data.getMes()) {
+        else if (dataValidade.getAno() == data.getAno())
+            if (dataValidade.getMes() < data.getMes()) {
                 return true;
             }
-            else if (dataDeValidade.getMes() == data.getMes())
-                return dataDeValidade.getDia() <= data.getDia();
+            else if (dataValidade.getMes() == data.getMes())
+                return dataValidade.getDia() <= data.getDia();
         return false;
     }
 }
