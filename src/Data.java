@@ -65,7 +65,7 @@ public class Data {
     }
 
     public String toString () {
-        return String.format ("%02d/%02d/%d", dia, mes, ano);
+        return String.format ("\n%02d/%02d/%d\n", dia, mes, ano);
     }
 
     public boolean verificaAnoBissexto () {

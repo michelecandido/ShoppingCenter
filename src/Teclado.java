@@ -36,7 +36,7 @@ public class Teclado
      */
     public static int leInt (String msg)
     {   int a = 0;
-        System.out.println(msg);
+        System.out.print(msg);
         try
         {
             s = d.readLine();
@@ -81,7 +81,7 @@ public class Teclado
      */
     public static double leDouble(String msg)
     {   double a = 0;
-        System.out.println(msg);
+        System.out.print(msg);
         try
         {
             s = d.readLine();
@@ -121,7 +121,7 @@ public class Teclado
      */
     public static String leString(String msg)
     {   s = "";
-        System.out.println(msg);
+        System.out.print(msg);
         try
         {
             s = d.readLine();
@@ -157,7 +157,7 @@ public class Teclado
      */
     public static char leChar(String msg)
     {   char a = ' ';
-        System.out.println(msg);
+        System.out.print(msg);
         try
         {
             s = d.readLine();

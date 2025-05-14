@@ -68,7 +68,7 @@ public class Endereco {
     }
 
     public String toString () {
-        return "Nome da Rua: " + nomeDaRua +
+        return "\n\n-- Endereço --" + "\nNome da Rua: " + nomeDaRua +
                 "\nCidade: " + cidade +
                 "\nEstado: " + estado +
                 "\nPaís: " + pais +
