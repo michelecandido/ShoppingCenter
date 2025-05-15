@@ -24,7 +24,7 @@ public class Principal {
                                 Teclado.leString("CEP: "),
                                 Teclado.leString("Número: "),
                                 Teclado.leString("Complemento: ")),
-                        new Data(Teclado.leInt ("\n-- Data de fundação --\nDia: "),
+                        new Data(Teclado.leInt("\n-- Data de fundação --\nDia: "),
                                 Teclado.leInt("Mês: "),
                                 Teclado.leInt("Ano: ")));
 
