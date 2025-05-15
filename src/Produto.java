@@ -3,42 +3,42 @@ public class Produto {
     private double preco;
     private Data dataValidade;
 
-    public Produto (String nome, double preco, Data dataValidade) {
+    public Produto(String nome, double preco, Data dataValidade) {
         this.nome = nome;
         this.preco = preco;
         this.dataValidade = dataValidade;
     }
 
-    public String getNome () {
+    public String getNome() {
         return nome;
     }
 
-    public double getPreco () {
+    public double getPreco() {
         return preco;
     }
 
-    public Data getDataValidade () {
+    public Data getDataValidade() {
         return dataValidade;
     }
 
-    public void setNome (String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setPreco (double preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
-    public void setDataValidade (Data dataValidade) {
+    public void setDataValidade(Data dataValidade) {
         this.dataValidade = dataValidade;
     }
 
-    public String toString () {
+    public String toString() {
         return "Nome do Produto: " + nome +
-                "\nPreço: R$" + String.format ("%.2f", preco);
+                "\nPreço: R$" + String.format("%.2f", preco);
     }
 
-    public boolean estaVencido (Data data) {
+    public boolean estaVencido(Data data) {
         if (dataValidade.getAno() < data.getAno()) {
             return true;
         }

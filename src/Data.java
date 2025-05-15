@@ -1,9 +1,9 @@
 public class Data {
     private int dia, mes, ano;
 
-    public Data (int dia, int mes, int ano) {
+    public Data(int dia, int mes, int ano) {
         // validação do mês
-        if (mes < 1 || mes > 12) {
+        if(mes < 1 || mes > 12) {
             System.out.println("Erro! Data alterada para: 01/01/2000.");
             this.dia = 1;
             this.mes = 1;
@@ -15,19 +15,19 @@ public class Data {
 
         // confere quantos dias têm num mês
         int diasDoMes;
-        if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+        if(mes == 4 || mes == 6 || mes == 9 || mes == 11) {
             diasDoMes = 30;
         }
-        else if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+        else if(mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
             diasDoMes = 31;
         else
-            if (ano % 4 == 0)
-                diasDoMes = 29;
-            else
-                diasDoMes = 28;
+        if(ano % 4 == 0)
+            diasDoMes = 29;
+        else
+            diasDoMes = 28;
 
         // validação do dia
-        if (dia < 1 || dia > diasDoMes) {
+        if(dia < 1 || dia > diasDoMes) {
             System.out.println("Erro! Data alterada para: 01/01/2000.");
             this.dia = 1;
             this.mes = 1;
@@ -40,35 +40,35 @@ public class Data {
         this.ano = ano;
     }
 
-    public int getDia () {
+    public int getDia() {
         return dia;
     }
 
-    public int getMes () {
+    public int getMes() {
         return mes;
     }
 
-    public int getAno () {
+    public int getAno() {
         return ano;
     }
 
-    public void setDia (int dia) {
+    public void setDia(int dia) {
         this.dia = dia;
     }
 
-    public void setMes (int mes) {
+    public void setMes(int mes) {
         this.mes = mes;
     }
 
-    public void setAno (int ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
-    public String toString () {
-        return String.format ("\n%02d/%02d/%d\n", dia, mes, ano);
+    public String toString() {
+        return String.format("\n%02d/%02d/%d\n", dia, mes, ano);
     }
 
-    public boolean verificaAnoBissexto () {
+    public boolean verificaAnoBissexto() {
         return ano % 4 == 0;
     }
 }
