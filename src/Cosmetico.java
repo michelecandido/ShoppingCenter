@@ -13,4 +13,9 @@ public class Cosmetico extends Loja {
     public void setTaxaComercializacao(double taxaComercializacao) {
         this.taxaComercializacao = taxaComercializacao;
     }
+
+    public String toString() {
+        return super.toString() +
+               "\nTaxa de Comercialização: " + String.format("%.2f",taxaComercializacao);
+    }
 }

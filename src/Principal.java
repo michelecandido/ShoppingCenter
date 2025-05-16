@@ -48,7 +48,7 @@ public class Principal {
                     System.out.println("\nPRODUTO VENCIDO\n");
                 }
                 else
-                    System.out.println("\nPRODUTO NÃO VENCIDO\n");
+                    System.out.println("\nPRODUTO NÃO VENCIDO");
             }
             else if(opcao == 3) {
                 System.out.println("\nJá vai? Te vejo na próxima! :)");

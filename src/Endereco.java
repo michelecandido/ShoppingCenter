@@ -68,12 +68,13 @@ public class Endereco {
     }
 
     public String toString() {
-        return "\n\n-- Endereço --" + "\nNome da Rua: " + nomeDaRua +
-                "\nCidade: " + cidade +
-                "\nEstado: " + estado +
-                "\nPaís: " + pais +
-                "\nCEP: " + cep +
-                "\nNúmero: " + numero +
-                "\nComplemento: " + complemento;
+        return "\n-- Endereço --" +
+               "\nNome da Rua: " + nomeDaRua +
+               "\nCidade: " + cidade +
+               "\nEstado: " + estado +
+               "\nPaís: " + pais +
+               "\nCEP: " + cep +
+               "\nNúmero: " + numero +
+               "\nComplemento: " + complemento;
     }
 }

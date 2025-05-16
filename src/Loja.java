@@ -62,10 +62,12 @@ public class Loja {
     }
 
     public String toString() {
-        return "\n-- Informações da Loja --" + "\nNome da Loja: " + nome +
-                "\nQuantidade de Funcionários: " + quantidadeFuncionarios +
-                "\nSalário Base: R$" + String.format("%.2f", salarioBaseFuncionario) +
-                endereco + "\n" +dataFundacao;
+        return "\n-- Informações da Loja --" +
+               "\nNome da Loja: " + nome +
+               "\nQuantidade de Funcionários: " + quantidadeFuncionarios +
+               "\nSalário Base: R$" + String.format("%.2f", salarioBaseFuncionario) +
+               "\n" + endereco +
+               "\nData de Fundação: " +dataFundacao;
     }
 
     public double gastosComSalario() {
