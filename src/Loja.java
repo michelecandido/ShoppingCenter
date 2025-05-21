@@ -1,16 +1,20 @@
+import java.util.Arrays;
+
 public class Loja {
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
     private Endereco endereco;
     private Data dataFundacao;
+    private Produto[] estoqueProdutos;
 
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, int quantidadeProdutos) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
         this.endereco = endereco;
         this.dataFundacao = dataFundacao;
+        this.estoqueProdutos = new Produto[quantidadeProdutos];
     }
 
     public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
@@ -67,7 +71,8 @@ public class Loja {
                "\nQuantidade de Funcionários: " + quantidadeFuncionarios +
                "\nSalário Base: R$" + String.format("%.2f", salarioBaseFuncionario) +
                "\n" + endereco +
-               "\nData de Fundação: " +dataFundacao;
+               "\nData de Fundação: " + dataFundacao +
+               "\nEstoque: " + Arrays.toString(estoqueProdutos);
     }
 
     public double gastosComSalario() {
