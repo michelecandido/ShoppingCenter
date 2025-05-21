@@ -17,12 +17,13 @@ public class Loja {
         this.estoqueProdutos = new Produto[quantidadeProdutos];
     }
 
-    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao, int quantidadeProdutos) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = -1;
         this.endereco = endereco;
         this.dataFundacao = dataFundacao;
+        this.estoqueProdutos = new Produto[quantidadeProdutos];
     }
 
     public String getNome() {
@@ -45,6 +46,10 @@ public class Loja {
         return dataFundacao;
     }
 
+    public Produto[] getEstoqueProdutos() {
+        return estoqueProdutos;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -63,6 +68,10 @@ public class Loja {
 
     public void setDataFundacao(Data dataFundacao) {
         this.dataFundacao = dataFundacao;
+    }
+
+    public void setEstoqueProdutos(Produto[] estoqueProdutos) {
+        this.estoqueProdutos = estoqueProdutos;
     }
 
     public String toString() {
@@ -91,5 +100,14 @@ public class Loja {
             return 'M';
         else
             return 'G';
+    }
+
+    public void imprimeProdutos() {
+        for(int i = 0; i < estoqueProdutos.length; i++)
+            System.out.println(estoqueProdutos[i]);
+    }
+
+    public boolean insereProduto(Produto produto) {
+        // insere o produto na primeira posição null do array
     }
 }
