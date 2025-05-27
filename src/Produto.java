@@ -34,10 +34,9 @@ public class Produto {
     }
 
     public String toString() {
-        return "\n-- Informações do Produto --" +
-               "\nNome do Produto: " + nome +
-               "\nPreço: R$" + String.format("%.2f", preco) +
-               "\nData de Validade: " + dataValidade;
+        return "\nNome do Produto: " + nome +
+               ", Preço: R$" + String.format("%.2f", preco) +
+               ", Data de Validade: " + dataValidade;
     }
 
     public boolean estaVencido(Data data) {

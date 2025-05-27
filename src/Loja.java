@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Loja {
     private String nome;
@@ -103,11 +104,36 @@ public class Loja {
     }
 
     public void imprimeProdutos() {
-        for(int i = 0; i < estoqueProdutos.length; i++)
-            System.out.println(estoqueProdutos[i]);
+        if(estoqueProdutos.length > 0) {
+            for(int i = 0; i < estoqueProdutos.length; i++)
+                System.out.println(estoqueProdutos[i].toString());
+        }
     }
 
     public boolean insereProduto(Produto produto) {
-        // insere o produto na primeira posição null do array
+        for(int i = 0; i < estoqueProdutos.length; i++) {
+            if(estoqueProdutos[i] == null) {
+                estoqueProdutos[i] = produto;
+                System.out.println("Produto adicionado ao estoque.");
+                return true;
+                }
+        }
+        System.out.println("O estoque está cheio. Não é possível adicionar mais produtos.");
+        return false;
+    }
+
+    public boolean removeProduto (String indice) {
+        for(int i = 0; i < estoqueProdutos.length; i++) {
+            if(estoqueProdutos[i] != null && Objects.equals(indice, estoqueProdutos[i].getNome())) {
+                for(int x = i; x < estoqueProdutos.length - 1; x++) {
+                    estoqueProdutos[x] = estoqueProdutos[x + 1];
+                }
+                estoqueProdutos[estoqueProdutos.length - 1] = null;
+                System.out.println("Produto removido do estoque.");
+                return true;
+            }
+        }
+        System.out.println("Produto não encontrado.");
+        return false;
     }
 }

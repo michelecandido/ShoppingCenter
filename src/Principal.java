@@ -26,7 +26,8 @@ public class Principal {
                                 Teclado.leString("Complemento: ")),
                         new Data(Teclado.leInt("\n-- Data de fundação --\nDia: "),
                                 Teclado.leInt("Mês: "),
-                                Teclado.leInt("Ano: ")));
+                                Teclado.leInt("Ano: ")),
+                        Teclado.leInt("\nEspaço Disponível no Estoque: "));
 
                 System.out.println(loja);
             }
@@ -48,7 +49,7 @@ public class Principal {
                     System.out.println("\nPRODUTO VENCIDO\n");
                 }
                 else
-                    System.out.println("\nPRODUTO NÃO VENCIDO");
+                    System.out.println("\nPRODUTO NÃO VENCIDO\n");
             }
             else if(opcao == 3) {
                 System.out.println("\nJá vai? Te vejo na próxima! :)");
