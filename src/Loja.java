@@ -122,9 +122,9 @@ public class Loja {
         return false;
     }
 
-    public boolean removeProduto (String indice) {
+    public boolean removeProduto (String nomeDoProduto) {
         for(int i = 0; i < estoqueProdutos.length; i++) {
-            if(estoqueProdutos[i] != null && Objects.equals(indice, estoqueProdutos[i].getNome())) {
+            if(estoqueProdutos[i] != null && Objects.equals(nomeDoProduto, estoqueProdutos[i].getNome())) {
                 for(int x = i; x < estoqueProdutos.length - 1; x++) {
                     estoqueProdutos[x] = estoqueProdutos[x + 1];
                 }

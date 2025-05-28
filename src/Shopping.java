@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Shopping {
     private String nome;
@@ -36,7 +37,79 @@ public class Shopping {
     }
 
     public String toString() {
-        return "Nome do Shopping: " + nome + "\n" + endereco +
-               "Quantidade de Lojas: " + Arrays.toString(lojas);
+        return "-- Informações do Shopping --\n" +
+               "Nome do Shopping: " + nome + "\n" +
+               "Quantidade de Lojas: " + Arrays.toString(lojas) +
+               "\n" + endereco.toString();
+    }
+
+    public boolean insereLoja(Loja loja) {
+        for (int i = 0; i < lojas.length; i++) {
+            if (lojas[i] == null) {
+                lojas[i] = loja;
+                System.out.println("Loja adicionada ao shopping.");
+                return true;
+            }
+        }
+        System.out.println("Não há espaços disponíveis para aluguel de lojas.");
+        return false;
+    }
+
+    public boolean removeLoja(String nomeDaLoja) {
+        for(int i = 0; i < lojas.length; i++) {
+            if(lojas[i] != null && Objects.equals(nomeDaLoja, lojas[i].getNome())) {
+                lojas[i] = null;
+                System.out.println("Loja removida.");
+                return true;
+            }
+        }
+        System.out.println("A loja não existe. Tente novamente.");
+        return false;
+    }
+
+    public int quantidadeLojasPorTipo(String tipoDeLoja) {
+        int quantidadeLojas = 0;
+
+        for(int i = 0; i < lojas.length; i++) {
+            if(lojas[i] != null)
+                switch(tipoDeLoja) {
+                    case("Cosmético"):
+                        if(lojas[i] instanceof Cosmetico)
+                            quantidadeLojas++;
+                        break;
+                    case("Vestuário"):
+                        if(lojas[i] instanceof Vestuario)
+                            quantidadeLojas++;
+                        break;
+                    case("Bijuteria"):
+                        if(lojas[i] instanceof Bijuteria)
+                            quantidadeLojas++;
+                        break;
+                    case("Alimentação"):
+                        if(lojas[i] instanceof Alimentacao)
+                            quantidadeLojas++;
+                        break;
+                    case("Informática"):
+                        if(lojas[i] instanceof Informatica)
+                            quantidadeLojas++;
+                        break;
+                    default:
+                        return -1;
+                }
+        }
+        return quantidadeLojas;
+    }
+
+    public Loja lojaSeguroMaisCaro() {
+        Loja informaticaMaisCara = null;
+        double seguroMaisCaro = 0;
+
+        for(int i = 0; i < lojas.length; i++) {
+            if(lojas[i] instanceof Informatica && ((Informatica) lojas[i]).getSeguroEletronicos() > seguroMaisCaro) {
+                seguroMaisCaro =  ((Informatica) lojas[i]).getSeguroEletronicos();
+                informaticaMaisCara = lojas[i];
+            }
+        }
+        return informaticaMaisCara;
     }
 }

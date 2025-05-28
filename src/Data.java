@@ -2,7 +2,6 @@ public class Data {
     private int dia, mes, ano;
 
     public Data(int dia, int mes, int ano) {
-        // validação do mês
         if(mes < 1 || mes > 12) {
             System.out.println("Erro! Data alterada para: 01/01/2000.");
             this.dia = 1;
@@ -13,7 +12,6 @@ public class Data {
         else
             this.mes = mes;
 
-        // confere quantos dias têm num mês
         int diasDoMes;
         if(mes == 4 || mes == 6 || mes == 9 || mes == 11) {
             diasDoMes = 30;
@@ -26,7 +24,6 @@ public class Data {
         else
             diasDoMes = 28;
 
-        // validação do dia
         if(dia < 1 || dia > diasDoMes) {
             System.out.println("Erro! Data alterada para: 01/01/2000.");
             this.dia = 1;
