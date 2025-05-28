@@ -106,7 +106,8 @@ public class Loja {
     public void imprimeProdutos() {
         if(estoqueProdutos.length > 0) {
             for(int i = 0; i < estoqueProdutos.length; i++)
-                System.out.println(estoqueProdutos[i].toString());
+                if (estoqueProdutos[i] != null)
+                    System.out.println(estoqueProdutos[i].toString());
         }
     }
 

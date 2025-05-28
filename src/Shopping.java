@@ -100,16 +100,16 @@ public class Shopping {
         return quantidadeLojas;
     }
 
-    public Loja lojaSeguroMaisCaro() {
-        Loja informaticaMaisCara = null;
+    public Informatica lojaSeguroMaisCaro() {
+        Informatica lojaMaisCara = null;
         double seguroMaisCaro = 0;
 
         for(int i = 0; i < lojas.length; i++) {
             if(lojas[i] instanceof Informatica && ((Informatica) lojas[i]).getSeguroEletronicos() > seguroMaisCaro) {
                 seguroMaisCaro =  ((Informatica) lojas[i]).getSeguroEletronicos();
-                informaticaMaisCara = lojas[i];
+                lojaMaisCara = (Informatica) lojas[i];
             }
         }
-        return informaticaMaisCara;
+        return lojaMaisCara;
     }
 }
