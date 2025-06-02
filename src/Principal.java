@@ -76,7 +76,7 @@ public class Principal {
             }
             else if(opcao == 2) {
                 System.out.println("\n-- Criação de Produto --");
-
+                /*
                 Produto produto = new Produto(Teclado.leString("Nome do produto: "),
                         Teclado.leDouble("Preço: "),
                         new Data(Teclado.leInt("\n-- Validade --\nDia: "),
@@ -93,6 +93,8 @@ public class Principal {
                 }
                 else
                     System.out.println("\nPRODUTO NÃO VENCIDO\n");
+
+                 */
             }
             else if(opcao == 3) {
                 System.out.println("\nJá vai? Te vejo na próxima! :)");
