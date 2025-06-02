@@ -47,23 +47,19 @@ public class Shopping {
         for (int i = 0; i < lojas.length; i++) {
             if (lojas[i] == null) {
                 lojas[i] = loja;
-                System.out.println("Loja adicionada ao shopping.");
                 return true;
             }
         }
-        System.out.println("Não há espaços disponíveis para aluguel de lojas.");
         return false;
     }
 
     public boolean removeLoja(String nomeDaLoja) {
         for(int i = 0; i < lojas.length; i++) {
-            if(lojas[i] != null && Objects.equals(nomeDaLoja, lojas[i].getNome())) {
+            if(lojas[i] != null && lojas[i].getNome().equalsIgnoreCase(nomeDaLoja)) {
                 lojas[i] = null;
-                System.out.println("Loja removida.");
                 return true;
             }
         }
-        System.out.println("A loja não existe. Tente novamente.");
         return false;
     }
 

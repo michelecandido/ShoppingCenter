@@ -97,44 +97,37 @@ public class Loja {
         if(quantidadeFuncionarios < 10) {
             return 'P';
         }
-        else if(quantidadeFuncionarios >= 10 && quantidadeFuncionarios <= 30)
+        else if(quantidadeFuncionarios <= 30)
             return 'M';
         else
             return 'G';
     }
 
     public void imprimeProdutos() {
-        if(estoqueProdutos.length > 0) {
-            for(int i = 0; i < estoqueProdutos.length; i++)
-                if (estoqueProdutos[i] != null)
-                    System.out.println(estoqueProdutos[i].toString());
+        for(int i = 0; i < estoqueProdutos.length; i++)
+            if (estoqueProdutos[i] != null) {
+                System.out.println(estoqueProdutos[i]);
         }
     }
 
     public boolean insereProduto(Produto produto) {
-        for(int i = 0; i < estoqueProdutos.length; i++) {
+        for(int i = 0; i < estoqueProdutos.length; i++)
             if(estoqueProdutos[i] == null) {
                 estoqueProdutos[i] = produto;
-                System.out.println("Produto adicionado ao estoque.");
                 return true;
                 }
-        }
-        System.out.println("O estoque está cheio. Não é possível adicionar mais produtos.");
         return false;
     }
 
-    public boolean removeProduto (String nomeDoProduto) {
-        for(int i = 0; i < estoqueProdutos.length; i++) {
-            if(estoqueProdutos[i] != null && Objects.equals(nomeDoProduto, estoqueProdutos[i].getNome())) {
+    public boolean removeProduto(String nomeDoProduto) {
+        for(int i = 0; i < estoqueProdutos.length; i++)
+            if(estoqueProdutos[i] != null && estoqueProdutos[i].getNome().equalsIgnoreCase(nomeDoProduto)) {
                 for(int x = i; x < estoqueProdutos.length - 1; x++) {
                     estoqueProdutos[x] = estoqueProdutos[x + 1];
                 }
                 estoqueProdutos[estoqueProdutos.length - 1] = null;
-                System.out.println("Produto removido do estoque.");
                 return true;
             }
-        }
-        System.out.println("Produto não encontrado.");
         return false;
     }
 }

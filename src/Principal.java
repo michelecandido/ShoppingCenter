@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Principal {
     public static void menu() {
         System.out.println("-- Escolha uma opção do menu abaixo:\n");
@@ -7,27 +9,68 @@ public class Principal {
     }
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
         while(true) {
             menu();
-            int opcao = Teclado.leInt("Opção: ");
+            System.out.print("Opção: ");
+            int opcao = input.nextInt();
 
             if(opcao == 1) {
                 System.out.println("\n-- Criação de Loja --");
 
-                Loja loja = new Loja(Teclado.leString("Nome da loja: "),
-                        Teclado.leInt("Quantidade de funcionários: "),
-                        Teclado.leDouble("Salário base: "),
-                        new Endereco(Teclado.leString("\n-- Endereço --\nRua: "),
-                                Teclado.leString("Cidade: "),
-                                Teclado.leString("Estado: "),
-                                Teclado.leString("País: "),
-                                Teclado.leString("CEP: "),
-                                Teclado.leString("Número: "),
-                                Teclado.leString("Complemento: ")),
-                        new Data(Teclado.leInt("\n-- Data de fundação --\nDia: "),
-                                Teclado.leInt("Mês: "),
-                                Teclado.leInt("Ano: ")),
-                        Teclado.leInt("\nEspaço Disponível no Estoque: "));
+                System.out.print("Nome da Loja: ");
+                String nomeLoja = input.nextLine();
+
+                System.out.print("Quantidade de Funcionários: ");
+                int quantFuncionarios = input.nextInt();
+                input.nextLine();
+
+                System.out.print("Salário Base: ");
+                double salarioBase = input.nextDouble();
+                input.nextLine();
+
+                System.out.println("\n-- Endereço --");
+
+                System.out.print("Rua: ");
+                String ruaLoja = input.nextLine();
+
+                System.out.print("Cidade: ");
+                String cidadeLoja = input.nextLine();
+
+                System.out.print("Estado: ");
+                String estadoLoja = input.nextLine();
+
+                System.out.print("País: ");
+                String paisLoja = input.nextLine();
+
+                System.out.print("CEP: ");
+                String cepLoja = input.nextLine();
+
+                System.out.print("Número: ");
+                String numLoja = input.nextLine();
+
+                System.out.print("Complemento: ");
+                String complementoLoja = input.nextLine();
+
+                System.out.println("\n-- Data de Fundação --");
+
+                System.out.print("Dia: ");
+                int diaLoja = input.nextInt();
+
+                System.out.print("Mês: ");
+                int mesLoja = input.nextInt();
+
+                System.out.print("Ano: ");
+                int anoLoja = input.nextInt();
+
+                System.out.print("Espaço Disponível no Estoque: ");
+                int estoqueLoja = input.nextInt();
+
+                Loja loja = new Loja(nomeLoja, quantFuncionarios, salarioBase,
+                        new Endereco(ruaLoja, cidadeLoja, estadoLoja, paisLoja, cepLoja, numLoja, complementoLoja),
+                        new Data(diaLoja, mesLoja, anoLoja),
+                        estoqueLoja);
 
                 System.out.println(loja);
             }
